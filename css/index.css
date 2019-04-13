@@ -330,6 +330,10 @@ img {
     margin: 0 auto 30px;
   }
 }
+.home .content-pick .destination #scroll-event {
+  overflow: scroll;
+  height: 175px;
+}
 .home .content-pick .destination .btn {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;

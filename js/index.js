@@ -35,6 +35,32 @@ searchField.addEventListener("focus", function(event) {
   event.target.style.background = "pink";
 });
 
-// Drag and drop
-// const buttons = document.querySelectorAll(".btn");
-// buttons.addEventListener("drag", function(event) {});
+//6.Resize when resizing the window the second img will be change with another pic
+window.addEventListener("resize", function(event) {
+  let adventureImg = document.querySelector(".img-content img");
+  adventureImg.setAttribute("src", "img/2img.jpg");
+});
+
+//7. Scroll when srolling the bottom content with the title of "Island Getaway" the text will change color
+const scrollText = document.querySelector("#scroll-event");
+scrollText.addEventListener("scroll", function(event) {
+  event.target.style.color = "purple";
+});
+
+//8. Select
+searchField.addEventListener("select", function(event) {
+  alert(`You've selected some text!`);
+});
+
+//9. dblclick this will change the border Radius for the third photo
+const secondImg = document.querySelectorAll(".img-content img");
+let myPic = secondImg[1];
+myPic.addEventListener("dblclick", function(event) {
+  event.target.style.borderRadius = " 50%";
+});
+
+//10.  Drag will conosle a message if someone tries to drag the first btn in the bottom
+const buttons = document.querySelectorAll(".btn");
+buttons[0].addEventListener("drag", function(event) {
+  console.log("You drag me!");
+});
