@@ -23,6 +23,7 @@ const mainWheel = document.querySelector("body");
 mainWheel.addEventListener("wheel", function(event) {
   let mainImg = document.querySelector(".intro img");
   mainImg.setAttribute("src", "img/fun-bus-flip.jpg");
+  console.log("Wheel event");
 });
 
 //4. Load this will show an alert with a message
@@ -44,7 +45,9 @@ window.addEventListener("resize", function(event) {
 //7. Scroll when srolling the bottom content with the title of "Island Getaway" the text will change color
 const scrollText = document.querySelector("#scroll-event");
 scrollText.addEventListener("scroll", function(event) {
+  event.stopPropagation();
   event.target.style.color = "purple";
+  console.log("scroll event");
 });
 
 //8. Select
