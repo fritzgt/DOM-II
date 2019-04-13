@@ -21,7 +21,6 @@ searchField.addEventListener("keydown", function(event) {
 //3.Wheel this will swap the mainimg to a duplicates img with a flip bus
 const mainWheel = document.querySelector("body");
 mainWheel.addEventListener("wheel", function(event) {
-  //   event.stopPropagation();
   let mainImg = document.querySelector(".intro img");
   mainImg.setAttribute("src", "img/fun-bus-flip.jpg");
   console.log("Wheel event");
@@ -46,8 +45,6 @@ window.addEventListener("resize", function(event) {
 //7. Scroll when srolling the bottom content with the title of "Island Getaway" the text will change color
 const scrollText = document.querySelector("#scroll-event");
 scrollText.addEventListener("scroll", function(event) {
-  //   event.stopPropagation();
-  //   event.preventDefault();
   event.target.style.color = "purple";
   console.log("scroll event");
 });
@@ -68,6 +65,18 @@ myPic.addEventListener("dblclick", function(event) {
 const buttons = document.querySelectorAll(".btn");
 buttons[0].addEventListener("drag", function(event) {
   console.log("You drag me!");
+});
+
+//StopPropagation hovering over the button will not fire the color event only the log event
+let desti = document.querySelectorAll(".destination");
+let secDes = desti[1];
+console.log(secDes);
+secDes.addEventListener("mouseover", function(event) {
+  event.target.style.color = " red";
+});
+buttons[1].addEventListener("mouseover", function(event) {
+  event.stopPropagation();
+  console.log("stopPropagation");
 });
 
 //Prevent default for the nav links
